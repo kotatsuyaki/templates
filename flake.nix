@@ -10,6 +10,10 @@
         path = ./markdown;
         description = "Markdown template for Pandoc and LaTeX PDF output";
       };
+      cmake = {
+        path = ./cmake;
+        description = "CMake C++ project template with Clang";
+      };
     };
   };
 }
