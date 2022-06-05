@@ -14,6 +14,10 @@
         path = ./cmake;
         description = "CMake C++ project template with Clang";
       };
+      python = {
+        path = ./python;
+        description = "Python project template with Poetry";
+      };
     };
   };
 }
