@@ -8,18 +8,9 @@ add_executable(
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)
 
 
-# External libs
-include_directories()
-
-# LTO
-include(CheckIPOSupported)
-check_ipo_supported(RESULT supported OUTPUT error)
-if( supported )
-  message(STATUS "LTO enabled")
-  set_property(TARGET ${PROJECT_NAME} PROPERTY INTERPROCEDURAL_OPTIMIZATION TRUE)
-else()
-  message(STATUS "LTO not supported: ${error}")
-endif()
+# Lint for unused includes
+find_program(iwyu_path NAMES include-what-you-use iwyu REQUIRED)
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_INCLUDE_WHAT_YOU_USE ${iwyu_path})
 
 
 # Linux-specific options

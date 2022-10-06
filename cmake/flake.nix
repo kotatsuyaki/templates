@@ -12,15 +12,16 @@
         pkgs = import nixpkgs { inherit system; };
         deps = [ ];
         native-deps = with pkgs; [
-          llvm_13
-          clang_13
+          llvm_14
+          clang_14
           ninja
           cmake
+          include-what-you-use
         ];
         dev-deps = with pkgs; [
           rnix-lsp
           clang-tools
-          lldb_13
+          lldb_14
         ];
 
         package = pkgs.pkgsStatic.stdenv.mkDerivation {
