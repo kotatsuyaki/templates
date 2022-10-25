@@ -18,6 +18,10 @@
         path = ./python;
         description = "Python project template with Poetry";
       };
+      maven = {
+        path = ./maven;
+        description = "Maven Java project";
+      };
     };
   };
 }
